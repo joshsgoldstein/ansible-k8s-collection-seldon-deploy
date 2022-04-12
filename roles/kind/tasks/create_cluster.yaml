@@ -12,7 +12,7 @@
       - cluster
       - --name={{ kind_cluster_name }}
       - --image={{ kind_image_version }}
-      - --config={{ kind_config_file }}
+      
   register: kind_cluster_command
   when: not cluster_check_result.exists
 
