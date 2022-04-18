@@ -64,7 +64,7 @@
       - 404
   register: repo_data
   until: (repo_data.status == 200) or (repo_data.status == 404)
-  retries: 60  # 60 * 1 seconds = 1 minute
+  retries: 1  # 60 * 1 seconds = 1 minute
   delay: 1     # Every 1 seconds
 
 
