@@ -54,7 +54,7 @@
 
 - name: "Check if {{ gitops_repo_name }} exist"
   uri:
-    url: "gitea-http.gitea-system.svc.cluster.local:{{ gitea_port }}/api/v1/repos/{{ gitops_user }}/{{ gitops_repo_name }}"
+    url: "http://gitea-http.gitea-system.svc.cluster.local:{{ gitea_port }}/gitea/api/v1/repos/{{ gitops_user }}/{{ gitops_repo_name }}"
     user: "{{ gitops_user }}"
     password: "{{ gitops_password }}"
     method: GET
@@ -70,7 +70,7 @@
 
 - name: "Create {{ gitops_repo_name }} repository if it does not exist"
   uri:
-    url: "gitea-http.gitea-system.svc.cluster.local:{{ gitea_port }}/api/v1/user/repos"
+    url: "http://gitea-http.gitea-system.svc.cluster.local:{{ gitea_port }}/gitea/api/v1/user/repos"
     user: "{{ gitops_user }}"
     password: "{{ gitops_password }}"
     body:
